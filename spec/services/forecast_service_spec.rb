@@ -4,7 +4,6 @@ RSpec.describe ForecastService do
   context 'instance methods' do
     describe '#get_forecast' do
       it 'returns a forecast for a city' do
-        VCR.use_cassette('/spec/services/forecast_service_spec.rb', record: :all) do
           lat = 39.74001
           lon = -104.99202
           forecast = ForecastService.get_forecast(lat, lon)
@@ -40,7 +39,6 @@ RSpec.describe ForecastService do
           
           expect(forecast[:forecast][:forecastday][0]).to have_key(:date)
           expect(forecast[:forecast][:forecastday][0][:date]).to be_a(String)
-        end
       end
     end
   end

@@ -49,7 +49,6 @@ group :development, :test do
   gem 'net-http'
   gem 'webmock'
   gem 'pry'
-  gem 'vcr'
 end
 
 group :development do

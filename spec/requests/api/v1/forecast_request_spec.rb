@@ -1,10 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Weather API' do
-
   it 'returns a successful response' do
-    VCR.use_cassette('/spec/requests/forecast_request.rb', record: :all) do
-      require 'pry'; binding.pry
+    
       get '/api/v1/forecast?location=denver,co'
 
       expect(response).to be_successful
@@ -27,6 +25,5 @@ RSpec.describe 'Weather API' do
 
       expect(forecast).to have_key(:current_weather)
       expect(forecast[:current_weather]).to be_a(Hash)
-    end
   end
 end
