@@ -23,17 +23,17 @@ class Forecast
   end
 
   def daily_weather(stats)
-      stats.map do |stat|
-    {
-      date: stat[:date],
-      sunrise: stat[:astro][:sunrise],
-      sunset: stat[:astro][:sunset],
-      max_temp: stat[:day][:maxtemp_f],
-      min_temp: stat[:day][:mintemp_f],
-      conditions: stat[:day][:condition][:text],
-      icon: stat[:day][:condition][:icon]
-    }
-      end
+    stats.map do |stat|
+      {
+        date: stat[:date],
+        sunrise: stat[:astro][:sunrise],
+        sunset: stat[:astro][:sunset],
+        max_temp: stat[:day][:maxtemp_f],
+        min_temp: stat[:day][:mintemp_f],
+        conditions: stat[:day][:condition][:text],
+        icon: stat[:day][:condition][:icon]
+      }
+    end
   end
 
   def hourly_weather(stats)

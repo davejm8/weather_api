@@ -5,7 +5,9 @@ RSpec.describe ForecastService do
     describe '#get_forecast' do
       it 'returns a forecast for a city' do
         VCR.use_cassette('/spec/services/forecast_service_spec.rb', record: :all) do
-          forecast = ForecastService.new.get_forecast('denver,co')
+          lat = 39.74001
+          lon = -104.99202
+          forecast = ForecastService.get_forecast(lat, lon)
 
           expect(forecast).to be_a(Hash)
 
