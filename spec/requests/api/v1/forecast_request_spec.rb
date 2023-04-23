@@ -20,6 +20,9 @@ RSpec.describe 'Weather API' do
       expect(forecast[:data][:attributes]).to have_key(:current_weather)
       expect(forecast[:data][:attributes][:current_weather]).to have_key(:last_updated)
       expect(forecast[:data][:attributes][:current_weather][:last_updated]).to be_a(String)
+
+      expect(forecast[:data][:attributes][:current_weather]).to have_key(:temperature)
+      expect(forecast[:data][:attributes][:current_weather][:temperature]).to be_a(Float)
     end
   end
 end
