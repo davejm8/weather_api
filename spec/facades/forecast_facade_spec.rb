@@ -18,7 +18,8 @@ RSpec.describe ForecastFacade do
           expect(forecast.current_weather[:icon]).to eq("//cdn.weatherapi.com/weather/64x64/day/116.png")
         end
       end
-      it 'returns only the atrributes from the facade' do
+      
+      it 'returns only the keys from the facade' do
         VCR.use_cassette('forecast_facade_spec') do
           forecast = ForecastFacade.get_forecast('denver,co')
 
