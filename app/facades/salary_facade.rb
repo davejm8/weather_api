@@ -10,16 +10,29 @@ class SalaryFacade
       summary: forecast.current_weather[:condition],
       temperature: forecast.current_weather[:temperature] 
     }
+
+    job_titles = [
+      "Data Analyst",
+      "Data Scientist",
+      "Mobile Developer",
+      "QA Engineer",
+      "Software Engineer",
+      "Systems Administrator",
+      "Web Developer"
+    ]
+
     
-    salary_data = salary_data[:salaries].map do |salary|
-      {
-        title: salary[:job][:title],
-        min: salary[:salary_percentiles][:percentile_25],
-        max: salary[:salary_percentiles][:percentile_75],
-      }
-    end
+    salaries = salary_data[:salaries].map do |sal|
+      if job_titles.include?(sal[:job][:title])
+        {
+          title: sal[:job][:title],
+          min: sal[:salary_percentiles][:percentile_25].round(2),
+          max: sal[:salary_percentiles][:percentile_75].round(2),
+        }
+      end
+    end.compact
     
     
-    Salary.new(city, forecast, salary_data)
+    Salary.new(city, forecast, salaries)
   end
 end

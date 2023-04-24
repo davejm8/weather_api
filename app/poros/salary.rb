@@ -1,10 +1,10 @@
 class Salary
-  attr_reader :id, :type, :salary_data, :forecast, :city
+  attr_reader :id, :type, :salaries, :forecast, :city
 
-  def initialize(id= "null", type = "salaries",city, forecast, salary_data)
+  def initialize(id= "null", type = "salaries",city, forecast, salaries)
     @id = id
     @type = type
-    @salary_data = salary_data
+    @salaries = salaries
     @forecast = forecast
     @city = city
   end

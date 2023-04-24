@@ -34,10 +34,9 @@ RSpec.describe SalaryFacade do
       expect(salary.city[:destination]).to eq(location)
       expect(salary.forecast[:summary]).to eq('Sunny')
       expect(salary.forecast[:temperature]).to eq(72)
-      expect(salary.salary_data.size).to eq(1)
-      expect(salary.salary_data[0][:title]).to eq('Software Engineer')
-      expect(salary.salary_data[0][:min]).to eq(60000)
-      expect(salary.salary_data[0][:max]).to eq(90000)
+      expect(salary.salaries[0][:title]).to eq('Software Engineer')
+      expect(salary.salaries[0][:min]).to eq(60000)
+      expect(salary.salaries[0][:max]).to eq(90000)
     end
   end
 end

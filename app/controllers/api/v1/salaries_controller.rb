@@ -1,8 +1,8 @@
 class Api::V1::SalariesController < ApplicationController
   def index
-    location = params[:location]
+    location = params[:destination]
     salary = SalaryFacade.salary_data(location)
 
-    render json: SalarySerializer.new(salary)
+    render json: SalariesSerializer.new(salary)
   end
 end
