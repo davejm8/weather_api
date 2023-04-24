@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.teleport.org/api/cities/?search=chicago
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2312'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 24 Apr 2023 15:20:30 GMT
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public, max-age=300
+      Server:
+      - nginx
+      X-Apiproxy-Cache-Status:
+      - EXPIRED
+      Vary:
+      - Origin,Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 39947baba82573c8d139cba81c505476.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P8
+      X-Amz-Cf-Id:
+      - lYjZN2bsbcX3hSFsVWv6NOPS_Vp0uQtfU0djY3zJdXjO7nAEMVw3Hg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"_embedded":{"city:search-results":[{"_links":{"city:item":{"href":"https://api.teleport.org/api/cities/geonameid:4887398/"}},"matching_alternate_names":[{"name":"Chicago"}],"matching_full_name":"Chicago,
+        Illinois, United States"},{"_links":{"city:item":{"href":"https://api.teleport.org/api/cities/geonameid:4887463/"}},"matching_alternate_names":[{"name":"Chicago
+        Lawn"}],"matching_full_name":"Chicago Lawn, Illinois, United States"},{"_links":{"city:item":{"href":"https://api.teleport.org/api/cities/geonameid:8436065/"}},"matching_alternate_names":[{"name":"Chicago
+        Loop"}],"matching_full_name":"Chicago Loop, Illinois, United States"},{"_links":{"city:item":{"href":"https://api.teleport.org/api/cities/geonameid:4887442/"}},"matching_alternate_names":[{"name":"Chicago
+        Heights"}],"matching_full_name":"Chicago Heights, Illinois, United States"},{"_links":{"city:item":{"href":"https://api.teleport.org/api/cities/geonameid:4887492/"}},"matching_alternate_names":[{"name":"Chicago
+        Ridge"}],"matching_full_name":"Chicago Ridge, Illinois, United States"},{"_links":{"city:item":{"href":"https://api.teleport.org/api/cities/geonameid:5524849/"}},"matching_alternate_names":[{"name":"Chicago"}],"matching_full_name":"Lamesa,
+        Texas, United States (Chicago)"},{"_links":{"city:item":{"href":"https://api.teleport.org/api/cities/geonameid:5176830/"}},"matching_alternate_names":[{"name":"Chicago"},{"name":"Chicago
+        Juncion"}],"matching_full_name":"Willard, Ohio, United States (Chicago)"}]},"_links":{"curies":[{"href":"https://developers.teleport.org/api/resources/Location/#!/relations/{rel}/","name":"location","templated":true},{"href":"https://developers.teleport.org/api/resources/City/#!/relations/{rel}/","name":"city","templated":true},{"href":"https://developers.teleport.org/api/resources/UrbanArea/#!/relations/{rel}/","name":"ua","templated":true},{"href":"https://developers.teleport.org/api/resources/Country/#!/relations/{rel}/","name":"country","templated":true},{"href":"https://developers.teleport.org/api/resources/Admin1Division/#!/relations/{rel}/","name":"a1","templated":true},{"href":"https://developers.teleport.org/api/resources/Timezone/#!/relations/{rel}/","name":"tz","templated":true}],"self":{"href":"https://api.teleport.org/api/cities/?search=chicago\u0026geohash="}},"count":7}'
+  recorded_at: Mon, 24 Apr 2023 15:20:30 GMT
+recorded_with: VCR 6.1.0
