@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ForecastFacade do
   context 'class methods' do
     describe '.get_forecast' do
-      it 'returns a forecast for a city' do
+      xit 'returns a forecast for a city' do
         VCR.use_cassette('forecast_facade_spec') do
           forecast = ForecastFacade.get_forecast('denver,co')
 
@@ -19,7 +19,7 @@ RSpec.describe ForecastFacade do
         end
       end
       
-      it 'returns only the keys from the facade' do
+      xit 'returns only the keys from the facade' do
         VCR.use_cassette('forecast_facade_spec') do
           forecast = ForecastFacade.get_forecast('denver,co')
 

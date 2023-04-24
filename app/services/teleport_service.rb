@@ -1,7 +1,18 @@
 class TeleportService
 
   def self.get_city(search)
-    response = Faraday.get("https://api.teleport.org/api/cities/?search=#{search}")
+    response = conn.get("https://api.teleport.org/api/cities/?search=#{search}")
+    parse(response)
+  end
+
+  # def self.get_city_info(search)
+  #   response = Faraday.get(get_city(search))
+  #   parse(response)
+  # end
+
+  def self.get_salaries(search)
+    response = conn.get("urban_areas/slug:#{search}/salaries")
+    # require 'pry'; binding.pry
     parse(response)
   end
 
