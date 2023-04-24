@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe ForecastFacade do
   context 'class methods' do
     describe '.get_forecast' do
-      xit 'returns a forecast for a city' do
+      it 'returns a forecast for a city' do
         VCR.use_cassette('forecast_facade_spec') do
           forecast = ForecastFacade.get_forecast('denver,co')
 
           expect(forecast).to be_a(Forecast)
-          expect(forecast.current_weather[:last_updated]).to eq("2023-04-23 11:30")
-          expect(forecast.current_weather[:temperature]).to eq(42.8)
-          expect(forecast.current_weather[:feels_like]).to eq(40.7)
-          expect(forecast.current_weather[:humidity]).to eq(51)
+          expect(forecast.current_weather[:last_updated]).to eq("2023-04-24 09:45")
+          expect(forecast.current_weather[:temperature]).to eq(45.7)
+          expect(forecast.current_weather[:feels_like]).to eq(45.7)
+          expect(forecast.current_weather[:humidity]).to eq(40)
           expect(forecast.current_weather[:uvi]).to eq(nil)
           expect(forecast.current_weather[:visibility]).to eq(9.0)
           expect(forecast.current_weather[:condition]).to eq("Partly cloudy")
@@ -19,7 +19,7 @@ RSpec.describe ForecastFacade do
         end
       end
       
-      xit 'returns only the keys from the facade' do
+      it 'returns only the keys from the facade' do
         VCR.use_cassette('forecast_facade_spec') do
           forecast = ForecastFacade.get_forecast('denver,co')
 
