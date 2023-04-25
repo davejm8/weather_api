@@ -8,7 +8,6 @@ RSpec.describe 'Roadtrip API' do
           start = 'New York, NY'
           finish = 'Los Angeles, CA'
           roadtrip = RoadtripService.get_directions(start, finish)
-      
           expect(roadtrip).to be_a(Hash)
 
           expect(roadtrip).to have_key(:route)

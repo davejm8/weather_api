@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Salary, type: :model do
+RSpec.describe Salary do
   describe 'initialize' do
     it 'creates a salary object with attributes' do
       city = { destination: 'chicago' }
