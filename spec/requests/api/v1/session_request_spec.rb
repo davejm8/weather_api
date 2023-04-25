@@ -24,6 +24,7 @@ RSpec.describe 'Session API' do
   end
 
   before(:each) do
+    User.destroy_all
     post "/api/v1/users", params: user_params.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
     expect(response.status).to eq(201)
@@ -33,6 +34,7 @@ RSpec.describe 'Session API' do
     post "/api/v1/sessions", params: login_params.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
     expect(response.status).to eq(200)
+    expect(response.body).to include("api_key")
   end
 
   it 'does not create a new session with an unsuccessful login' do

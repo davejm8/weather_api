@@ -1,4 +1,5 @@
 class SalaryFacade
+  
   def self.salary_data(location)
     salary_data = TeleportService.get_salaries(location)
     forecast = ForecastFacade.get_forecast(location)
