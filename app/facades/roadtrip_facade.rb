@@ -2,14 +2,8 @@ class RoadtripFacade
 
   def self.get_directions(start, finish)
     roadtrip = RoadtripService.get_directions(start, finish)
-    location = MapquestService.get_location(finish)
-
-    lat = location[:lat]
-    long = location[:lng]
-    forecast = ForecastService.get_forecast(lat, long)
-
     
-    if roadtrip[:responseBody][:responseCode] == "400"
+    if roadtrip[:info][:statuscode] == 402
 			data = {
         id: "null",
 				start_city: start,
@@ -19,11 +13,16 @@ class RoadtripFacade
 			}
 			return Roadtrip.new(data)
       
+    else
+      location = MapquestService.get_location(finish)
+  
+      lat = location[:lat]
+      long = location[:lng]
+      forecast = ForecastService.get_forecast(lat, long)
+      
       formatted_time = roadtrip[:route][:formattedTime]
       travel_time = roadtrip[:route][:time]
       arrival = Time.now + travel_time
-
-    else
       forecast[:forecast][:forecastday].each do |day|
         if arrival.to_s.include?(day[:date])
           day[:hour].each do |hour|

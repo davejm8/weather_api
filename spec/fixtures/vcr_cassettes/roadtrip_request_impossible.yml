@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.mapquestapi.com/directions/v2/route?from=New%20York,%20NY&key=UpOGDjV3tTvwKxf07SsOreyNZdKTzpqA&routeType=fastest&to=London,%20UK
+    uri: https://www.mapquestapi.com/directions/v2/route?from=Portland,ME&key=UpOGDjV3tTvwKxf07SsOreyNZdKTzpqA&routeType=fastest&to=London,UK
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 25 Apr 2023 20:22:44 GMT
+      - Tue, 25 Apr 2023 20:51:39 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -29,17 +29,17 @@ http_interactions:
       X-Ratelimit-Limit-2628000:
       - '15000'
       X-Ratelimit-Remaining-2628000:
-      - '14078'
+      - '13968'
       Ratelimit-Limit:
       - '15000'
       Ratelimit-Remaining:
-      - '14078'
+      - '13968'
       Ratelimit-Reset:
-      - '2093836'
+      - '2092101'
       X-Powered-By:
       - MapQuest
       X-Request-Id:
-      - ef6fef00-e3a6-11ed-89aa-f99c572852dc
+      - f9de6300-e3aa-11ed-b3b9-3d5c27d58603
       Access-Control-Allow-Origin:
       - "*"
       X-Transaction-Count:
@@ -50,5 +50,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyMiBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
-  recorded_at: Tue, 25 Apr 2023 20:22:43 GMT
+  recorded_at: Tue, 25 Apr 2023 20:51:39 GMT
 recorded_with: VCR 6.1.0
