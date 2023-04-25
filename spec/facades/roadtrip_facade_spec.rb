@@ -8,7 +8,6 @@ RSpec.describe RoadtripFacade do
           start = 'New York, NY'
           finish = 'Los Angeles, CA'
           roadtrip = RoadtripFacade.get_directions(start, finish)
-
           expect(roadtrip).to be_a(Roadtrip)
 
           expect(roadtrip.start_city).to eq('New York, NY')
@@ -26,6 +25,22 @@ RSpec.describe RoadtripFacade do
 
           expect(roadtrip.weather_at_eta).to have_key(:condition)
           expect(roadtrip.weather_at_eta[:condition]).to eq("Clear")
+        end
+      end
+
+      it 'returns impossible if the trip is impossible' do
+        VCR.use_cassette('roadtrip_facade_impossible') do
+          start = 'New York, NY'
+          finish = 'London, UK'
+          roadtrip = RoadtripFacade.get_directions(start, finish)
+          expect(roadtrip).to be_a(Roadtrip)
+
+          expect(roadtrip.start_city).to eq('New York, NY')
+          expect(roadtrip.end_city).to eq('London, UK')
+
+          expect(roadtrip.travel_time).to eq("impossible")
+
+          expect(roadtrip.weather_at_eta).to eq({})
         end
       end
     end

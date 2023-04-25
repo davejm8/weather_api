@@ -8,13 +8,10 @@ class RoadtripFacade
     long = location[:lng]
     forecast = ForecastService.get_forecast(lat, long)
 
-    formatted_time = roadtrip[:route][:formattedTime]
-    travel_time = roadtrip[:route][:time]
-    arrival = Time.now + travel_time
-
-    if roadtrip[:info][:statuscode] == 402
+    
+    if roadtrip[:responseBody][:responseCode] == "400"
 			data = {
-				id: "null",
+        id: "null",
 				start_city: start,
 				end_city: finish,
 				travel_time: "impossible",
@@ -22,6 +19,10 @@ class RoadtripFacade
 			}
 			return Roadtrip.new(data)
       
+      formatted_time = roadtrip[:route][:formattedTime]
+      travel_time = roadtrip[:route][:time]
+      arrival = Time.now + travel_time
+
     else
       forecast[:forecast][:forecastday].each do |day|
         if arrival.to_s.include?(day[:date])
