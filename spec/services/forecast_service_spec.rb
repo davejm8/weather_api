@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ForecastService do
-  context 'instance methods' do
+  context '::class_methods' do
     describe '#get_forecast' do
       it 'returns a forecast for a city' do
         VCR.use_cassette('forecast_service_spec') do
