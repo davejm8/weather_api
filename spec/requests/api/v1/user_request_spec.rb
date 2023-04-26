@@ -25,6 +25,10 @@ RSpec.describe 'User API' do
     }
   end
 
+  before :each do
+    User.destroy_all
+  end
+
   it 'creates a new user and generates an api key' do
     post '/api/v1/users', params: user_params.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 

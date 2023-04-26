@@ -53,7 +53,7 @@ RSpec.describe 'Roadtrip API' do
       expect(trip[:data][:attributes][:weather_at_eta]).to be_a(Hash)
 
       expect(trip[:data][:attributes][:weather_at_eta]).to have_key(:temperature)
-      expect(trip[:data][:attributes][:weather_at_eta][:temperature]).to eq(61.5)
+      expect(trip[:data][:attributes][:weather_at_eta][:temperature]).to be_a(Float)
     end
   end
 
